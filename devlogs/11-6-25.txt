@@ -1,0 +1,20 @@
+5:56 AM at the time of writing this.
+
+This is the first devlog of this project, I'm going to be adding all the stuff that has changed and spout random nonsense into these files, it will be my diary of sorts. So, to whoever is reading these, I hope you have some fun.
+
+What we have so far:
+Some MMR commands done,
+Breachers queue done,
+valorant queue done,
+r6 queue done,
+rocket league queue done
+parties working (for the most part)
+
+What I plan to add:
+Substitutions (that aren't automatically done before
+actually using parties in games, right now you can only create, invite, and view whos in a party
+echo queue (will do after sprockee or law respond to my damn messages)
+
+Anyways, that's it for this devlog. I will have these be more verbose in the future, but for now, we're just gonna stick with simplicity. It's 6:02 AM now, and I have to get ready for school, goodbye.
+
+- Bryson
