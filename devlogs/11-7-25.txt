@@ -1,0 +1,17 @@
+5:01 AM at the time of writing this
+
+It's pretty early again and I just pushed some new changes
+
+Added "ephemeral" parameter to /mmr-view command (See commit: 8eec23d)
+Make every message sent in #command-central get automatically removed by the bot (See commit: 8eec23d)
+
+That's all I have for today, I'm gonna add echo queueing soon because sprockee is generating me a server key to have access to
+the nakama API, just so I can make the bot pull servers.
+
+My god am I happy it's friday, can finally chill out for another 2 days and slack off
+
+On a side note, my Rift CV1 *should* arrive monday according to USPS. However, I hope it is a lot sooner than that.
+
+Anyways, that's about it, see ya
+
+- Bryson
