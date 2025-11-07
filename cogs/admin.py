@@ -11,13 +11,15 @@ class Admin(commands.Cog):
     @app_commands.command(name="mmr-view", description="View MMR stats for a player")
     @app_commands.describe(
         game="Game to view stats for",
-        user="User to view (leave blank for yourself)"
+        user="User to view (leave blank for yourself)",
+        ephemeral="Whether to send as an ephemeral message (default: True)"
     )
     async def mmr_view(
-        self, 
-        interaction: discord.Interaction, 
+        self,
+        interaction: discord.Interaction,
         game: Literal["r6", "rl", "valorant", "breachers"],
-        user: Optional[discord.Member] = None
+        user: Optional[discord.Member] = None,
+        ephemeral: bool = True
     ):
         target_user = user if user else interaction.user
         
@@ -49,8 +51,8 @@ class Admin(commands.Cog):
             embed.add_field(name="Win Rate", value="N/A", inline=True)
         
         embed.add_field(name="W/L", value=f"{stats['wins']}/{stats['losses']}", inline=True)
-        
-        await interaction.response.send_message(embed=embed)
+
+        await interaction.response.send_message(embed=embed, ephemeral=ephemeral)
     
     @app_commands.command(name="mmr-change", description="ADMIN: Change a player's MMR by an amount")
     @app_commands.describe(

@@ -43,6 +43,10 @@ class Multiverse(commands.Bot):
         if message.author.bot:
             return
 
+        if message.channel.id == 1436097772372758668:
+            await message.delete()
+            return
+
         if "how do i queue" in message.content.lower():
             await message.reply("For information on how to queue, please refer to [this message](https://discord.com/channels/1268967648352538624/1436097772372758668/1436098741575880754)!")
 
