@@ -25,14 +25,15 @@ class Multiverse(commands.Bot):
         
     async def setup_hook(self):
         await self.db.initialize()
-        
+
         await self.load_extension('cogs.r6_queue')
         await self.load_extension('cogs.rocketleague_queue')
         await self.load_extension('cogs.valorant_queue')
         await self.load_extension('cogs.breachers_queue')
         await self.load_extension('cogs.parties')
         await self.load_extension('cogs.admin')
-        
+        await self.load_extension('cogs.leaderboard')
+
         await self.tree.sync()
         print(f"Synced commands for {self.user}")
     

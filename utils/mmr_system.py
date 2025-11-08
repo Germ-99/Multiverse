@@ -13,6 +13,8 @@ class MMRSystem:
         expected_score = self.calculate_expected_score(player_mmr, opponent_mmr)
         base_change = self.k_factor * (actual_score - expected_score)
         
+        # FIXME: Currently, variance_factor is always 1.
+        # This means MMR changes are never scaled, making the variance completely useless
         variance_factor = self.variance / 1600
         adjusted_change = base_change / variance_factor
         

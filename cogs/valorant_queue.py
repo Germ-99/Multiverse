@@ -262,7 +262,7 @@ class ValorantWinnerVoteView(discord.ui.View):
         
         await self.channel.send(embed=embed)
         
-        await asyncio.sleep(30)
+        await asyncio.sleep(2)
         await self.channel.delete()
 
 class ValorantQueue(commands.Cog):

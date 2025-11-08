@@ -279,8 +279,38 @@ class DatabaseManager:
     async def get_party_count(self, party_name, captain_id):
         async with aiosqlite.connect(self.db_path) as db:
             cursor = await db.execute('''
-                SELECT COUNT(*) FROM parties 
+                SELECT COUNT(*) FROM parties
                 WHERE party_name = ? AND captain_id = ?
             ''', (party_name, captain_id))
             result = await cursor.fetchone()
             return result[0]
+
+    async def get_top_mmr_players(self, game_type, limit=10):
+        async with aiosqlite.connect(self.db_path) as db:
+            if game_type == "r6":
+                cursor = await db.execute('''
+                    SELECT user_id, r6_mmr FROM players
+                    ORDER BY r6_mmr DESC
+                    LIMIT ?
+                ''', (limit,))
+            elif game_type == "rl":
+                cursor = await db.execute('''
+                    SELECT user_id, rl_mmr FROM players
+                    ORDER BY rl_mmr DESC
+                    LIMIT ?
+                ''', (limit,))
+            elif game_type == "valorant":
+                cursor = await db.execute('''
+                    SELECT user_id, valorant_mmr FROM players
+                    ORDER BY valorant_mmr DESC
+                    LIMIT ?
+                ''', (limit,))
+            elif game_type == "breachers":
+                cursor = await db.execute('''
+                    SELECT user_id, breachers_mmr FROM players
+                    ORDER BY breachers_mmr DESC
+                    LIMIT ?
+                ''', (limit,))
+
+            results = await cursor.fetchall()
+            return results
