@@ -1,0 +1,17 @@
+2:16 PM at the time of writing this
+
+WooHoo! First time a devlog isn't at 4 in the morning.
+
+Anyways, here are the newest features we got
+
+Added /leaderboard command - we finally got a leaderboard! (See commit: f9f1a93055c9ebbb7335e8f1549f07245b61d033)
+Changed the timer for deleting channels after a match -- is now 2 seconds instead of 30 (See commit: f9f1a93055c9ebbb7335e8f1549f07245b61d033)
+
+That's all for today, not much eh? Anyways, I am *STILL* waiting on sprockee to send me that damn server key so I can use the nakama API
+On another note, I added a FIXME inside mmr_system.py that I hope I can actually follow up on. However, I doubt I will remember to actually fix it.
+
+Thank you for reading this devlog, I will not add any stable release versions until this thing is actually good for release.
+
+That's about it, see ya.
+
+- Bryson
