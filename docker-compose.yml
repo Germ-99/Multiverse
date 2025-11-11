@@ -1,0 +1,52 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    container_name: multiverse-bot
+    # Command to run the bot (default is already set in Dockerfile)
+    command: python main.py
+    # Load environment variables from .env file
+    env_file:
+      - .env
+    # Mount the current directory for development (optional)
+    # Uncomment the volumes section below for live code reloading during development
+    # volumes:
+    #   - .:/app
+    # Persist database data
+    volumes:
+      - ./data:/app/data
+    # Restart policy
+    restart: unless-stopped
+    
+    # Note: This is a Discord bot, so no ports need to be exposed
+    # If you add a web interface or API later, uncomment and configure ports:
+    # ports:
+    #   - "8000:8000"
+
+# Example: Add a PostgreSQL database (currently using SQLite)
+# Uncomment if you migrate to PostgreSQL in the future
+#  db:
+#    image: postgres:16
+#    container_name: multiverse-db
+#    environment:
+#      POSTGRES_USER: multiverse
+#      POSTGRES_PASSWORD: changeme
+#      POSTGRES_DB: multiverse
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#    restart: unless-stopped
+
+# Example: Add Redis for caching (if needed)
+#  redis:
+#    image: redis:7-alpine
+#    container_name: multiverse-redis
+#    ports:
+#      - "6379:6379"
+#    restart: unless-stopped
+
+# Volumes for data persistence
+# volumes:
+#   postgres_data:
